@@ -17,6 +17,11 @@ export const CHAIN_DICT = {
     137: 'https://polygon-rpc.com/',
     80001: 'https://mumbai.polygonscan.com/',
   }
+
+  export const ADDR_DICT={
+    1:'',
+    3:'0x189CA3Ee832f145442d71ca6D278e6dA02d2E528',
+  }
   
   export const METAMASK_LOGO ='https://cdn.iconscout.com/icon/free/png-256/metamask-2728406-2261817.png'
   export const WALLETC_LOGO = 'https://example.walletconnect.org/favicon.ico'

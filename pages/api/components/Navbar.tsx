@@ -7,7 +7,8 @@ import { Select } from '@chakra-ui/react';
 import { CHAIN_DICT } from './context/constant';
 import { NetworkList } from './NetworkList';
 import { ethers } from 'ethers';
-import Greeter from './smartcontracts/artifacts/contracts/Greeter.sol/Greeter.json'
+import { ADDR_DICT } from './context/constant';
+import { useToast } from '@chakra-ui/react'
 
 export const Navbar =() =>{
 
@@ -24,19 +25,13 @@ export const Navbar =() =>{
         provider
       } = useMetamask()
 
-
-      const showProvider=()=>{      
-        const GreetContract = new ethers.Contract('0x189CA3Ee832f145442d71ca6D278e6dA02d2E528',Greeter.abi,provider);
-        console.log(provider)
-        console.log(Greeter.abi);
-        console.log(GreetContract)
-      }
+      const toast = useToast();
 
     return(
         < >
             <Flex padding={"20px"} borderRadius={"20px"} flexDirection={"row"} width={"99%"} bgColor={"blueviolet"} height={"fit-content"} margin={"10px"} >
                 <Box width={"50%"}>
-                    <Button onClick={() => showProvider()} >OnChain</Button>
+                    <Button>OnChain</Button>
                 </Box>
                 <Box paddingLeft={"40vw"} flexDirection={"row"}>
                 
