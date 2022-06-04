@@ -7,17 +7,19 @@ import {AiOutlineFileImage} from 'react-icons/ai'
 import { useMetamask } from './context/metamask.context';
 import PostContentABI from './smartcontracts/artifacts/contracts/PostContract.sol/PostContract.json'
 import {ethers} from 'ethers';
+import { ADDR_DICT } from './context/constant';
 
 const CreatePost =() =>{
 
     const[textcontent,setTextcontent]=useState('');
     const toast = useToast()
-    const{provider} = useMetamask();
-    const PostContractInterface = new ethers.Contract('0xDF7D3D9B7437e985fab0295C0A26f559adE07163',PostContentABI.abi,provider?.getSigner());
-
-
+    const{provider,chain} = useMetamask();
+    console.log(chain)
+    
+    
     const addPost =() =>{
         try{
+            const PostContractInterface = new ethers.Contract(ADDR_DICT[chain],PostContentABI.abi,provider?.getSigner());
             PostContractInterface.addPost(textcontent,'abc');
             toast({
             title: 'Post created.',
