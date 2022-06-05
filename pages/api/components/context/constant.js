@@ -15,7 +15,7 @@ export const CHAIN_DICT = {
   export const ADDR_DICT={
     1:'',
     3:'0xD57d57EfE3fADc4Cfe12400d5b846Ec287200c46',
-    80001:'0x3Ac0eB3fd0d4Ec058e8EbEA35B9697cdc2e55e2C'
+    80001:'0xC26038F72306D9614bcEDDBB5eD7B565da813CAc'
   }
   
   export const METAMASK_LOGO ='https://cdn.iconscout.com/icon/free/png-256/metamask-2728406-2261817.png'
