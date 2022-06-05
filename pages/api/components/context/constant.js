@@ -14,7 +14,7 @@ export const CHAIN_DICT = {
 
   export const ADDR_DICT={
     1:'',
-    3:'0x35D3c3966b114dd5Fc45CF4927A8C4BF0354868f',
+    3:'0xD57d57EfE3fADc4Cfe12400d5b846Ec287200c46',
     80001:'0x3Ac0eB3fd0d4Ec058e8EbEA35B9697cdc2e55e2C'
   }
   
