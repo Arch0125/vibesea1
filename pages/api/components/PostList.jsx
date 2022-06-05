@@ -105,7 +105,7 @@ export const PostList =() =>{
     return(
         <>
         <Button marginBottom={"10px"} onClick={showloop} variant={'outline'}>Refresh if post doesn't appear &nbsp; <RiRefreshLine/></Button>
-        <Flex flexDirection={"column-reverse"} >
+        <Flex flexDirection={"column-reverse"} overflowY={"scroll"} height={"70vh"} >
             {
                 Object.keys(posts).slice(0).map((post, index) => (
                     <Flex marginBottom={"20px"}>
