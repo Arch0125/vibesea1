@@ -72,7 +72,8 @@ export const PostList =() =>{
                const tx = await provider?.getSigner().sendTransaction({
                 to: props.text,
                 value: ethers.utils.parseEther(amount)
-              }); 
+              });
+              PostContractInterface.addTip(props.text,amount); 
             }
             
         }
@@ -105,7 +106,7 @@ export const PostList =() =>{
     return(
         <>
         <Button marginBottom={"10px"} onClick={showloop} variant={'outline'}>Refresh if post doesn't appear &nbsp; <RiRefreshLine/></Button>
-        <Flex flexDirection={"column-reverse"} overflowY={"scroll"} height={"70vh"} >
+        <Flex flexDirection={"column-reverse"} overflowY={"scroll"} height={"fit-content"} maxHeight={"70vh"} >
             {
                 Object.keys(posts).slice(0).map((post, index) => (
                     <Flex marginBottom={"20px"}>

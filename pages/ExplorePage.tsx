@@ -8,6 +8,7 @@ import CreatePost from './api/components/CreatePost';
 import { PostList } from './api/components/PostList';
 import { ProfileCard } from './api/components/ProfileCard';
 
+
 export const ExplorePage =() =>{
     return(
         <Flex flexDirection={"row"} >
