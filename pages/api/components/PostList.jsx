@@ -4,28 +4,37 @@ import {ethers} from 'ethers';
 import PostContentABI from './smartcontracts/artifacts/contracts/PostContract.sol/PostContract.json'
 import { useMetamask } from './context/metamask.context';
 import { ADDR_DICT } from './context/constant';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 
 
 export const PostList =() =>{
 
     const{provider,chain} = useMetamask();
     const PostContractInterface = new ethers.Contract(ADDR_DICT[3],PostContentABI.abi,provider?.getSigner());
-    const postList: any[]=[]
+    const postList=[];
+    const[posts,setPosts]=useState([]);
     
     const showloop=async()=>{
-        for(let i=1;i<5;i++){
-            var currentdata = await PostContractInterface.getPost(i);
-            postList.push(currentdata);
+        setPosts([]);
+        for(let i=1;i<6;i++){
+            var post = await PostContractInterface.getPost(i);
+            postList.push(post);
+            setPosts((posts)=>[...posts,post])
         }
-        console.log(postList)
+        console.log(posts)
     }
-    showloop();
     return(
 <div>
-{postList.map((index)=>(
-        <label>{index.name}</label>
-    ))}
+<ul>
+      {
+        Object.keys(posts).map((post, index) => (
+          <li key={`${posts[index].name}-${index}`}>
+            <h4>{posts[index].content}</h4>
+          </li>
+        ))
+      }
+      </ul>
+    <button onClick={showloop} >Showlist</button>
 </div>
     )
 }

@@ -19,7 +19,6 @@ const Home: NextPage<Props> = (props:Props) => {
     <Flex bgColor={"white"} height={"100vh"} flexDirection={"column"} >
       <Navbar/>
       <ExplorePage/>
-      <PostList/>
     </Flex>
   )
 }

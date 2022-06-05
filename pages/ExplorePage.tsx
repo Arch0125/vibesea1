@@ -5,6 +5,7 @@ import { IconButton } from '@chakra-ui/react';
 import { BsPencil, BsEasel } from "react-icons/bs";
 import {AiOutlineEdit} from 'react-icons/ai'
 import CreatePost from './api/components/CreatePost';
+import { PostList } from './api/components/PostList';
 
 export const ExplorePage =() =>{
     return(
@@ -20,6 +21,7 @@ export const ExplorePage =() =>{
                     <TabPanels>
                         <TabPanel>
                             <CreatePost/>
+                            <PostList/>
                         </TabPanel>
                         <TabPanel>
                         <p>two!</p>
