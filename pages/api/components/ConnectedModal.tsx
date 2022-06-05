@@ -33,7 +33,7 @@ export const ConnectedModal =() =>{
       
       const { isOpen, onOpen, onClose } = useDisclosure()
 
-      var network = CHAIN_DICT[chain];
+      var network = CHAIN_DICT[3];
 
     return(
         
