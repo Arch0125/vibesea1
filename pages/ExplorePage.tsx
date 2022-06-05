@@ -10,7 +10,7 @@ import { PostList } from './api/components/PostList';
 export const ExplorePage =() =>{
     return(
         <Flex flexDirection={"row"} >
-            <Flex justifyContent={"center"} paddingTop={"50px"} flexDirection={"row"} width={"70%"} bgColor={"gray.50"} height={"100vh"} textAlign={"center"} >
+            <Flex flexDirection={"column"} width={"70%"} bgColor={"gray.50"} height={"100vh"} textAlign={"center"} alignItems={"center"} >
                 <Box bgColor={"white"} height={"fit-content"} width={"80%"} padding={"20px"} borderColor={"gray.200"} borderWidth={"1.5px"} borderRadius={"20px"} >
                 <Tabs>
                     <TabList>
@@ -21,13 +21,17 @@ export const ExplorePage =() =>{
                     <TabPanels>
                         <TabPanel>
                             <CreatePost/>
-                            <PostList/>
+                            
                         </TabPanel>
                         <TabPanel>
                         <p>two!</p>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
+                
+                </Box>
+                <Box marginTop={"50px"}>
+                    <PostList/>
                 </Box>
             </Flex>
             <Box flex={"1"} height={"100%"}>
